@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:ns0="http://www.w3.org/2005/Atom" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Línea Directa – Noticias</title>
+    <link>https://www.lineadirectaaseguradora.com/sala-prensa/noticias</link>
+    <description>Últimas noticias oficiales de Línea Directa Aseguradora</description>
+    <language>es-es</language>
+    <ttl>60</ttl>
+    <ns0:link href="https://raw.githubusercontent.com/plis2100/rss-linea-directa/main/linea-directa.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Aug 2026 11:39:56 +0000</lastBuildDate>
+    <item>
+      <title>Línea Directa activa un dispositivo para atender a los asegurados afectados por los terremotos registrados en Granada</title>
+      <link>https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-activa-dispositivo-atencion-terremoto-granada-consorcio</link>
+      <guid isPermaLink="true">https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-activa-dispositivo-atencion-terremoto-granada-consorcio</guid>
+      <description>La compañía refuerza sus equipos de atención para acompañar a los clientes afectados y ayudarles en la gestión de los trámites derivados de los daños ocasionados por los seísmos.</description>
+      <source url="https://www.lineadirectaaseguradora.com/sala-prensa/noticias">Línea Directa Aseguradora</source>
+      <pubDate>Wed, 19 Aug 2026 08:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Línea Directa activa un dispositivo especial para atender a los asegurados afectados por los incendios forestales</title>
+      <link>https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-medidas-incendios-asegurados</link>
+      <guid isPermaLink="true">https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-medidas-incendios-asegurados</guid>
+      <description>Línea Directa activa un dispositivo especial para atender a los asegurados afectados por los incendios forestales - Web Corporativa Línea Directa Aseguradora</description>
+      <source url="https://www.lineadirectaaseguradora.com/sala-prensa/noticias">Línea Directa Aseguradora</source>
+      <pubDate>Mon, 27 Jul 2026 08:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Línea Directa gana un 19% más en el primer semestre, hasta los 52,1 millones de euros, por el crecimiento de todas las líneas de negocio y la mejora del ratio combinado</title>
+      <link>https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-aseguradora-resultados-6m-2026-gana-52-millones-de-euros</link>
+      <guid isPermaLink="true">https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-aseguradora-resultados-6m-2026-gana-52-millones-de-euros</guid>
+      <description>Línea Directa gana un 19% más en el primer semestre, hasta los 52,1 millones de euros, por el crecimiento de todas las líneas de negocio - Web Corporativa Línea Directa Aseguradora</description>
+      <source url="https://www.lineadirectaaseguradora.com/sala-prensa/noticias">Línea Directa Aseguradora</source>
+      <pubDate>Mon, 27 Jul 2026 08:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Línea Directa Aseguradora aprueba un primer dividendo a cuenta de 18 millones de euros</title>
+      <link>https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-aprueba-primer-dividendo-a-cuenta-2026</link>
+      <guid isPermaLink="true">https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-aprueba-primer-dividendo-a-cuenta-2026</guid>
+      <description>Línea Directa Aseguradora aprueba un primer dividendo a cuenta de 18 millones de euros - Web Corporativa Línea Directa Aseguradora</description>
+      <source url="https://www.lineadirectaaseguradora.com/sala-prensa/noticias">Línea Directa Aseguradora</source>
+      <pubDate>Thu, 25 Jun 2026 08:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
