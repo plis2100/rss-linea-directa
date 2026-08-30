@@ -20,16 +20,11 @@ ARCHIVO_RSS = "linea-directa.xml"
 
 
 def limpiar_texto(texto):
-    return re.sub(r"\s+", " ", texto or "").strip()
-
-
-def crear_url_inicial():
-    anio_actual = datetime.now(timezone.utc).year
-
-    return (
-        "https://www.lineadirectaaseguradora.com/"
-        f"sala-prensa/{anio_actual}"
-    )
+    return re.sub(
+        r"\s+",
+        " ",
+        texto or "",
+    ).strip()
 
 
 def descargar_pagina(url):
@@ -95,7 +90,7 @@ def extraer_descripcion(soup):
             meta_og["content"]
         )
 
-        if len(descripcion) >= 50:
+        if len(descripcion) >= 40:
             return descripcion[:800]
 
     meta_normal = soup.find(
@@ -108,21 +103,16 @@ def extraer_descripcion(soup):
             meta_normal["content"]
         )
 
-        if len(descripcion) >= 50:
+        if len(descripcion) >= 40:
             return descripcion[:800]
 
-    principal = soup.find("main") or soup.find("article")
+    principal = (
+        soup.find("main")
+        or soup.find("article")
+        or soup
+    )
 
-    if principal:
-        for parrafo in principal.find_all("p"):
-            texto = limpiar_texto(
-                parrafo.get_text(" ", strip=True)
-            )
-
-            if len(texto) >= 80:
-                return texto[:800]
-
-    for parrafo in soup.find_all("p"):
+    for parrafo in principal.find_all("p"):
         texto = limpiar_texto(
             parrafo.get_text(" ", strip=True)
         )
@@ -131,82 +121,73 @@ def extraer_descripcion(soup):
             return texto[:800]
 
     return (
-        "Noticia publicada por "
+        "Noticia oficial publicada por "
         "Línea Directa Aseguradora."
     )
 
 
 def obtener_enlaces():
-    url_pagina = crear_url_inicial()
+    anio_actual = datetime.now(timezone.utc).year
 
-    paginas_vistas = set()
+    pagina_listado = (
+        "https://www.lineadirectaaseguradora.com/"
+        f"sala-prensa/{anio_actual}"
+    )
+
+    contenido = descargar_pagina(pagina_listado)
+
+    soup = BeautifulSoup(
+        contenido,
+        "html.parser",
+    )
+
+    enlaces = []
     enlaces_vistos = set()
-    enlaces_noticias = []
 
-    for _ in range(15):
-        if not url_pagina:
-            break
+    for enlace in soup.find_all("a", href=True):
+        texto_enlace = limpiar_texto(
+            enlace.get_text(" ", strip=True)
+        ).lower()
 
-        if url_pagina in paginas_vistas:
-            break
-
-        paginas_vistas.add(url_pagina)
-
-        print(f"Leyendo listado: {url_pagina}")
-
-        contenido = descargar_pagina(url_pagina)
-        soup = BeautifulSoup(
-            contenido,
-            "html.parser",
+        href = limpiar_texto(
+            enlace.get("href", "")
         )
 
-        for enlace in soup.find_all("a", href=True):
-            texto_enlace = limpiar_texto(
-                enlace.get_text(" ", strip=True)
-            ).lower()
+        if not href:
+            continue
 
-            if "leer más" not in texto_enlace:
-                continue
+        if href.lower().startswith("javascript:"):
+            continue
 
-            url_noticia = urljoin(
-                BASE_URL,
-                enlace["href"],
-            )
+        if href == "#":
+            continue
 
-            url_noticia = url_noticia.split("#")[0]
+        if "leer más" not in texto_enlace:
+            continue
 
-            if "/sala-de-prensa/-/" not in url_noticia:
-                continue
+        url = urljoin(
+            BASE_URL,
+            href,
+        )
 
-            if url_noticia in enlaces_vistos:
-                continue
+        url = url.split("#")[0]
 
-            enlaces_vistos.add(url_noticia)
-            enlaces_noticias.append(url_noticia)
+        if "/sala-de-prensa/-/" not in url:
+            continue
 
-        siguiente = None
+        if url in enlaces_vistos:
+            continue
 
-        for enlace in soup.find_all("a", href=True):
-            texto_enlace = limpiar_texto(
-                enlace.get_text(" ", strip=True)
-            ).lower()
+        enlaces_vistos.add(url)
+        enlaces.append(url)
 
-            if texto_enlace == "siguiente":
-                siguiente = urljoin(
-                    BASE_URL,
-                    enlace["href"],
-                )
-                break
-
-        url_pagina = siguiente
-
-    if not enlaces_noticias:
+    if not enlaces:
         raise RuntimeError(
             "No se encontraron noticias "
             "de Línea Directa"
         )
 
-    return enlaces_noticias
+    return enlaces
 
 
 def obtener_noticias():
@@ -231,20 +212,20 @@ def obtener_noticias():
                     )
                 )
             else:
-                titulo_pagina = soup.find("title")
+                etiqueta_titulo = soup.find("title")
 
-                if titulo_pagina:
-                    titulo = limpiar_texto(
-                        titulo_pagina.get_text(
-                            " ",
-                            strip=True,
-                        )
-                    )
-                else:
+                if not etiqueta_titulo:
                     print(
-                        f"No se encontró título: {url}"
+                        f"No se encontró el título: {url}"
                     )
                     continue
+
+                titulo = limpiar_texto(
+                    etiqueta_titulo.get_text(
+                        " ",
+                        strip=True,
+                    )
+                )
 
             texto_pagina = limpiar_texto(
                 soup.get_text(" ", strip=True)
@@ -262,7 +243,9 @@ def obtener_noticias():
                 }
             )
 
-            print(f"Noticia encontrada: {titulo}")
+            print(
+                f"Noticia encontrada: {titulo}"
+            )
 
         except Exception as error:
             print(
@@ -271,25 +254,11 @@ def obtener_noticias():
 
     if not noticias:
         raise RuntimeError(
-            "No se pudieron obtener noticias "
+            "No se pudieron obtener las noticias "
             "de Línea Directa"
         )
 
-    fecha_minima = datetime(
-        datetime.now(timezone.utc).year - 1,
-        1,
-        1,
-        tzinfo=timezone.utc,
-    )
-
-    noticias_recientes = [
-        noticia
-        for noticia in noticias
-        if noticia["fecha"] is None
-        or noticia["fecha"] >= fecha_minima
-    ]
-
-    noticias_recientes.sort(
+    noticias.sort(
         key=lambda noticia: (
             noticia["fecha"]
             or datetime(
@@ -302,7 +271,7 @@ def obtener_noticias():
         reverse=True,
     )
 
-    return noticias_recientes[:50]
+    return noticias
 
 
 def crear_rss(noticias):
@@ -316,7 +285,10 @@ def crear_rss(noticias):
         },
     )
 
-    canal = ET.SubElement(rss, "channel")
+    canal = ET.SubElement(
+        rss,
+        "channel",
+    )
 
     ET.SubElement(
         canal,
@@ -343,6 +315,11 @@ def crear_rss(noticias):
 
     ET.SubElement(
         canal,
+        "ttl",
+    ).text = "60"
+
+    ET.SubElement(
+        canal,
         "{http://www.w3.org/2005/Atom}link",
         {
             "href": (
@@ -361,11 +338,6 @@ def crear_rss(noticias):
         canal,
         "lastBuildDate",
     ).text = format_datetime(ahora)
-
-    ET.SubElement(
-        canal,
-        "ttl",
-    ).text = "60"
 
     for noticia in noticias:
         elemento = ET.SubElement(
@@ -409,7 +381,11 @@ def crear_rss(noticias):
             )
 
     arbol = ET.ElementTree(rss)
-    ET.indent(arbol, space="  ")
+
+    ET.indent(
+        arbol,
+        space="  ",
+    )
 
     arbol.write(
         ARCHIVO_RSS,
@@ -432,6 +408,7 @@ def validar_rss():
         )
 
     raiz = ET.parse(archivo).getroot()
+
     elementos = raiz.findall(
         "./channel/item"
     )
@@ -446,7 +423,9 @@ def validar_rss():
 
 def main():
     noticias = obtener_noticias()
+
     crear_rss(noticias)
+
     cantidad = validar_rss()
 
     print(
@@ -460,7 +439,8 @@ def main():
     )
 
     print(
-        f"Archivo generado: {ARCHIVO_RSS}"
+        f"Archivo generado: "
+        f"{ARCHIVO_RSS}"
     )
 
 
