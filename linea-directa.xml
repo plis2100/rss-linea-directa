@@ -7,7 +7,15 @@
     <language>es-es</language>
     <ttl>60</ttl>
     <ns0:link href="https://raw.githubusercontent.com/plis2100/rss-linea-directa/main/linea-directa.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 05 Oct 2026 12:31:07 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 12:10:29 +0000</lastBuildDate>
+    <item>
+      <title>Línea Directa lanza un nuevo seguro para mascotas con un plan veterinario completo</title>
+      <link>https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-lanza-nuevo-seguro-para-mascotas-con-veterinario</link>
+      <guid isPermaLink="true">https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-lanza-nuevo-seguro-para-mascotas-con-veterinario</guid>
+      <description>Línea Directa Aseguradora amplía su propuesta de seguros con el lanzamiento del Seguro para Mascotas con Veterinario, un producto que da un paso más en la protección y el cuidado de perros y gatos al incorporar coberturas diferenciales en el sector a un precio muy competitivo.</description>
+      <source url="https://www.lineadirectaaseguradora.com/sala-prensa/noticias">Línea Directa Aseguradora</source>
+      <pubDate>Mon, 05 Oct 2026 08:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Línea Directa activa un dispositivo para atender a los asegurados afectados por los terremotos registrados en Granada</title>
       <link>https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-activa-dispositivo-atencion-terremoto-granada-consorcio</link>
@@ -31,14 +39,6 @@
       <description>Línea Directa gana un 19% más en el primer semestre, hasta los 52,1 millones de euros, por el crecimiento de todas las líneas de negocio - Web Corporativa Línea Directa Aseguradora</description>
       <source url="https://www.lineadirectaaseguradora.com/sala-prensa/noticias">Línea Directa Aseguradora</source>
       <pubDate>Mon, 27 Jul 2026 08:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Línea Directa Aseguradora aprueba un primer dividendo a cuenta de 18 millones de euros</title>
-      <link>https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-aprueba-primer-dividendo-a-cuenta-2026</link>
-      <guid isPermaLink="true">https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-aprueba-primer-dividendo-a-cuenta-2026</guid>
-      <description>Línea Directa Aseguradora aprueba un primer dividendo a cuenta de 18 millones de euros - Web Corporativa Línea Directa Aseguradora</description>
-      <source url="https://www.lineadirectaaseguradora.com/sala-prensa/noticias">Línea Directa Aseguradora</source>
-      <pubDate>Thu, 25 Jun 2026 08:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
