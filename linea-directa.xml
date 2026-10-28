@@ -7,7 +7,15 @@
     <language>es-es</language>
     <ttl>60</ttl>
     <ns0:link href="https://raw.githubusercontent.com/plis2100/rss-linea-directa/main/linea-directa.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Oct 2026 10:48:41 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 11:30:29 +0000</lastBuildDate>
+    <item>
+      <title>Línea Directa obtiene un beneficio de 80,4 millones de euros hasta septiembre, un 34,8% más, por el fuerte crecimiento del negocio y la rentabilidad</title>
+      <link>https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-aseguradora-resultados-9-meses-2026</link>
+      <guid isPermaLink="true">https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-aseguradora-resultados-9-meses-2026</guid>
+      <description>Línea Directa Aseguradora ha cerrado los nueve primeros meses de 2026 con una sólida evolución de sus resultados, impulsados por el crecimiento del negocio en todas sus líneas y por la excelencia en la gestión técnica.</description>
+      <source url="https://www.lineadirectaaseguradora.com/sala-prensa/noticias">Línea Directa Aseguradora</source>
+      <pubDate>Wed, 28 Oct 2026 08:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>I Barómetro de la Digitalización Línea Directa: los ciudadanos ahorran una semana de tiempo al año y 2.140 euros con gestiones digitales</title>
       <link>https://www.lineadirectaaseguradora.com/sala-de-prensa/-/barometro-de-la-digitalizacion-linea-directa-aseguradora</link>
@@ -31,14 +39,6 @@
       <description>La compañía refuerza sus equipos de atención para acompañar a los clientes afectados y ayudarles en la gestión de los trámites derivados de los daños ocasionados por los seísmos.</description>
       <source url="https://www.lineadirectaaseguradora.com/sala-prensa/noticias">Línea Directa Aseguradora</source>
       <pubDate>Wed, 19 Aug 2026 08:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Línea Directa activa un dispositivo especial para atender a los asegurados afectados por los incendios forestales</title>
-      <link>https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-medidas-incendios-asegurados</link>
-      <guid isPermaLink="true">https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-medidas-incendios-asegurados</guid>
-      <description>Línea Directa activa un dispositivo especial para atender a los asegurados afectados por los incendios forestales - Web Corporativa Línea Directa Aseguradora</description>
-      <source url="https://www.lineadirectaaseguradora.com/sala-prensa/noticias">Línea Directa Aseguradora</source>
-      <pubDate>Mon, 27 Jul 2026 08:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
