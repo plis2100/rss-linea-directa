@@ -7,7 +7,15 @@
     <language>es-es</language>
     <ttl>60</ttl>
     <ns0:link href="https://raw.githubusercontent.com/plis2100/rss-linea-directa/main/linea-directa.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 18 Nov 2026 14:27:47 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 14:38:29 +0000</lastBuildDate>
+    <item>
+      <title>Más de 5 millones de españoles que aplazan una consulta médica acaban en urgencias</title>
+      <link>https://www.lineadirectaaseguradora.com/sala-de-prensa/-/5-millones-de-espa%C3%B1oles-aplazan-consulta-medica-acaban-en-urgencias</link>
+      <guid isPermaLink="true">https://www.lineadirectaaseguradora.com/sala-de-prensa/-/5-millones-de-espa%C3%B1oles-aplazan-consulta-medica-acaban-en-urgencias</guid>
+      <description>Línea Directa Aseguradora presenta "La Salud Aplazada", un estudio en colaboración con el Dr. Justo Menéndez, sobre cómo la falta de tiempo y la postergación médica afecta a la salud de los españoles</description>
+      <source url="https://www.lineadirectaaseguradora.com/sala-prensa/noticias">Línea Directa Aseguradora</source>
+      <pubDate>Thu, 19 Nov 2026 08:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Línea Directa obtiene un beneficio de 80,4 millones de euros hasta septiembre, un 34,8% más, por el fuerte crecimiento del negocio y la rentabilidad</title>
       <link>https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-aseguradora-resultados-9-meses-2026</link>
@@ -31,14 +39,6 @@
       <description>Línea Directa Aseguradora amplía su propuesta de seguros con el lanzamiento del Seguro para Mascotas con Veterinario, un producto que da un paso más en la protección y el cuidado de perros y gatos al incorporar coberturas diferenciales en el sector a un precio muy competitivo.</description>
       <source url="https://www.lineadirectaaseguradora.com/sala-prensa/noticias">Línea Directa Aseguradora</source>
       <pubDate>Mon, 05 Oct 2026 08:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Línea Directa activa un dispositivo para atender a los asegurados afectados por los terremotos registrados en Granada</title>
-      <link>https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-activa-dispositivo-atencion-terremoto-granada-consorcio</link>
-      <guid isPermaLink="true">https://www.lineadirectaaseguradora.com/sala-de-prensa/-/linea-directa-activa-dispositivo-atencion-terremoto-granada-consorcio</guid>
-      <description>La compañía refuerza sus equipos de atención para acompañar a los clientes afectados y ayudarles en la gestión de los trámites derivados de los daños ocasionados por los seísmos.</description>
-      <source url="https://www.lineadirectaaseguradora.com/sala-prensa/noticias">Línea Directa Aseguradora</source>
-      <pubDate>Wed, 19 Aug 2026 08:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
